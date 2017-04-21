@@ -3,35 +3,51 @@
 This script takes a strings resource as a model and a second one as a target.
 It will format the target strings resource in order to keep the same tags and comments order as the model one.
 Be aware that the target strings resource will be overwritten if no output file has been specified.
-The script will also warn you if a resource is missing inside the target strings.xml file.
+The script will also warn you if a resource is missing inside the target `strings.xml` file.
 
 You need to run this script inside of the res directory of your Android project.
 Example of usage: python android-strings-format.py --target fr --output formatted_strings.xml
 
+Package is also available on PyPI:
+https://pypi.python.org/pypi/android-strings-format/
+
+## Getting started
+Requirements:
+
+* Python >= 2.7.*
+* [Standard Android project structure](https://developer.android.com/tools/projects/index.html) for localized values-* folders in `res/` folder
+
+To install run:
+```bash
+pip install android-strings-format
+```
+
 ## Usage
 
-android-strings-format.py [-h] [-m MODEL] -t TARGET
+`cd` into your `res/` folder, and run:
+
+python android-strings-format.py [-h] [-m MODEL] -t TARGET
                                  [-o OUTPUT]
 
 *  -h, --help            show this help message and exit
 
 *  --model MODEL, -m MODEL
-                        Language code of the strings resource to use as model.
+                        Language code of the strings resource to use as model (ex: en, fr...).
                         If not specified, strings.xml inside the default
                         values directory will be used as the model.
 
 *  --target TARGET, -t TARGET
-                        Language code of the strings resource to format
+                        Language code of the strings resource to format (ex: en, fr).
 
 *  --output OUTPUT, -o OUTPUT
-                        Path to the output formatted strings resource. If not
+                        Path to the output formatted strings resource (ex: output.xml). If not
                         specified, the target strings resource file will be
                         overwritten.
 
 ## Example
 
-Target inside values directory
-```
+Target inside `values` directory
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
@@ -75,8 +91,8 @@ Target inside values directory
 </resources>
 ```
 
-Model inside values-fr directory
-```
+Model inside `values-fr` directory
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Resources not formatted. What a disaster -->
@@ -116,12 +132,12 @@ Model inside values-fr directory
 ```
 
 Running command
-```
+```bash
 python android-strings-format.py --target fr --output formatted_strings.xml
 ```
 
 Output
-```
+```xml
 Processing with...
     model: values/strings.xml
     target: values-fr/strings.xml
@@ -130,7 +146,7 @@ Saved formatted strings resource to: formatted_strings.xml
 ```
 
 formatted_strings.xml
-```
+```xml
 <?xml version='1.0' encoding='UTF-8'?>
 <!--
   Copyright 2016 Jonathan Odul
