@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Copyright 2016 Jonathan Odul
+  Blablablabla
+-->
+
+<resources>
+    <!-- Application name -->
+    <string name="app_name">APP</string>
+
+    <!-- Dialog texts -->
+    <string name="loading">Loading…</string>
+    <string name="loading_data">Loading data…</string>
+    <string name="processing">Processing…</string>
+    <string name="please_wait">Please wait…</string>
+
+    <!-- Dialog button texts -->
+    <string name="ok">Ok</string>
+    <string name="refresh">Refresh</string>
+    <string name="cancel">Cancel</string>
+    <string name="quit">Quit</string>
+
+    <!-- Error message -->
+    <string name="no_sdcard">No SD card mounted.
+    \nPlease mount a sd card to use this application.</string>
+
+    <!-- Modes -->
+    <string-array name="modes">
+        <item>Single</item>
+        <item>Shuffle</item>
+        <item>Repeat</item>
+    </string-array>
+
+    <!-- Plurals: time_minute -->
+    <plurals name="time_minute">
+        <item quantity="one">%1$d minute</item>
+        <item quantity="other">%1$d minutes</item>
+    </plurals>
+
+</resources>
